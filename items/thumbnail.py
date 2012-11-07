@@ -31,7 +31,7 @@ class ThumbnailImageFieldFile(ImageFieldFile):
         img.save(self.thumb_path, 'JPEG')
 
     def delete(self, save=True):
-        if os.exists(self.thumb_path):
+        if os.path.exists(self.thumb_path):
             os.remove(self.thumb_path)
         super(ThumbnailImageFieldFile, self).delete(save)
 
